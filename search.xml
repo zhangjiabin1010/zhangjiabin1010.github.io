@@ -2,20 +2,44 @@
 <search>
   <entry>
     <title>测试文章</title>
-    <url>/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB/20191224-url-collect-test.html</url>
-    <content><![CDATA[<p>摘要测试摘要测试摘要测试摘要测试摘要测试摘要测试摘要测试<br>摘要测试摘要测试摘要测试摘要测试摘要测试摘要测试摘要测<br>摘要测试摘要测试摘要测试摘要测试</p>
+    <url>/%E6%8A%80%E6%9C%AF/20170810-ThreadPool-method.html</url>
+    <content><![CDATA[<p>虽然python由于GIL的存在，对计算密集型任务处理效率比较低下，但对于常见的IO密集型任务(数据的读写、网络IO数据传输)还是很能提高效率的，<br>如果要为多线程任务创建大量线程。由于线程过多可能会出现许多性能问题，我们可以通过创建线程池来解决此问题。<br>线程池事先定义一组初始化和空闲的线程，当我们需要执行大量任务时，与为每个任务实例化新线程相比显然更优，线程池可以更好得管理并发执行的大量线程</p>
 <a id="more"></a>
 
-<p>1.完成权限管理模块单条增加修改删除及查看详情接口<br>2.完成权限管理模块单条增加修改删除及查看详情接口大撒旦撒<br>3.完成权限管理模块单条增加修改删除及查看详情接口大撒旦撒</p>
-<p>我说的第一段话，说完换行就得了完成权限管理模块单条增加修改删除及查看详情接口大撒旦撒</p>
-<p>我说的第二段话开始</p>
-<p>####小标题<br>阿萨德撒多</p>
+
+
+<h3 id="Pool-map"><a href="#Pool-map" class="headerlink" title="Pool.map()"></a>Pool.map()</h3><hr>
+<blockquote>
+<p>将可迭代项分为多个块，作为单独的任务提交给进程池。可利用池中的所有进程。多参数应用同一线程函数。但是结果与参数相对应的顺序返回。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import datetime</span><br><span class="line">from multiprocessing.pool import ThreadPool</span><br><span class="line"></span><br><span class="line">def thread_out_test(i):</span><br><span class="line">    nowtime &#x3D; datetime.datetime.now().strftime(&quot;%Y-%m-%d %H:%M:%S&quot;)</span><br><span class="line">    print(nowtime,i)</span><br><span class="line">    return i</span><br><span class="line"></span><br><span class="line">def main_fun():</span><br><span class="line">    output &#x3D; [1,2,3,4,5,6,7,8,9,10]</span><br><span class="line">    pool &#x3D; ThreadPool(processes&#x3D;10)</span><br><span class="line">    result_data &#x3D; pool.map(thread_out_test, (i for i in output))</span><br><span class="line">    #关闭pool，不再接受新的主进程任务</span><br><span class="line">    pool.close()</span><br><span class="line">    #主进程阻塞后，等待子进程运行完后再关闭主进程</span><br><span class="line">    pool.join()</span><br><span class="line">    print(result_data)</span><br><span class="line">    return result_data</span><br><span class="line"></span><br><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;:</span><br><span class="line">    main_fun()</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Pool-apply-async-apply"><a href="#Pool-apply-async-apply" class="headerlink" title="Pool.apply_async()/apply()"></a>Pool.apply_async()/apply()</h3><hr>
+<blockquote>
+<p>Pool.apply():单独进程运行函数，但是希望当前进程在该函数返回之前一直阻塞</p>
+</blockquote>
+<blockquote>
+<p>Pool.apply_async():单独进程运行函数，进程池异步执行许多功能调用 或者 调用许多不同的线程函数，结果的顺序不能保证与调用的顺序相同。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import datetime</span><br><span class="line">from multiprocessing.pool import ThreadPool</span><br><span class="line"></span><br><span class="line">def thread_out_test(i):</span><br><span class="line">    nowtime &#x3D; datetime.datetime.now().strftime(&quot;%Y-%m-%d %H:%M:%S&quot;)</span><br><span class="line">    print(nowtime,i)</span><br><span class="line">    return i</span><br><span class="line"></span><br><span class="line">result_list &#x3D; []</span><br><span class="line">def callback_fun(result):</span><br><span class="line">    result_list.append(result)</span><br><span class="line"></span><br><span class="line">def main_fun():</span><br><span class="line">    output &#x3D; [1,2,3,4,5,6,7,8,9,10]</span><br><span class="line">    pool &#x3D; ThreadPool(processes&#x3D;10)</span><br><span class="line">    for i in output:</span><br><span class="line">        #可添加异步回调函数</span><br><span class="line">        pool.apply_async(thread_out_test, args&#x3D;(i,), callback&#x3D;callback_fun)</span><br><span class="line">    #关闭pool，不再接受新的主进程任务</span><br><span class="line">    pool.close()</span><br><span class="line">    #主进程阻塞后，等待子进程运行完后再关闭主进程</span><br><span class="line">    pool.join()</span><br><span class="line">    return result_list</span><br><span class="line"></span><br><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;:</span><br><span class="line">    main_fun()</span><br></pre></td></tr></table></figure>
+
+<h3 id="其他详细用法，参见ThreadPool中方法"><a href="#其他详细用法，参见ThreadPool中方法" class="headerlink" title="其他详细用法，参见ThreadPool中方法"></a>其他详细用法，参见ThreadPool中方法</h3><hr>
+<p>Pool.map_async()</p>
+<blockquote>
+<p>map()方法的异步版本</p>
+</blockquote>
+<p>Pool.starmap()</p>
+<blockquote>
+<p>可迭代对象的元素也是可迭代的数据</p>
+</blockquote>
 ]]></content>
       <categories>
-        <category>测试分类</category>
+        <category>技术</category>
       </categories>
       <tags>
-        <tag>测试标签</tag>
+        <tag>python</tag>
       </tags>
   </entry>
 </search>

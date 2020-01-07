@@ -48,15 +48,20 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Mr.Zhang&#39;s space">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="工作中遇到一个层级较深的菜单栏需求，采用递归方案处理。顺便提下递归的三个特性   必须要有一个明确的结束条件, 否则就变成死循环导致栈溢出 每次更深一层的递归，问题规模应有所减少，否则无限递归导致栈溢出。 递归效率比较低，递归层次过多会导致栈溢出。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python  递归组织树形菜单栏数据">
+<meta property="og:url" content="http://yoursite.com/%E6%8A%80%E6%9C%AF/20171210-python-recursive-handle-data.html">
 <meta property="og:site_name" content="Mr.Zhang&#39;s space">
+<meta property="og:description" content="工作中遇到一个层级较深的菜单栏需求，采用递归方案处理。顺便提下递归的三个特性   必须要有一个明确的结束条件, 否则就变成死循环导致栈溢出 每次更深一层的递归，问题规模应有所减少，否则无限递归导致栈溢出。 递归效率比较低，递归层次过多会导致栈溢出。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-12-10T12:02:35.000Z">
+<meta property="article:modified_time" content="2020-01-07T09:11:06.316Z">
 <meta property="article:author" content="Mr.Zhang">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/archives/">
+<link rel="canonical" href="http://yoursite.com/%E6%8A%80%E6%9C%AF/20171210-python-recursive-handle-data.html">
 
 
 <script id="page-configurations">
@@ -64,11 +69,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>归档 | Mr.Zhang's space</title>
+  <title>python  递归组织树形菜单栏数据 | Mr.Zhang's space</title>
   
 
 
@@ -197,89 +202,110 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 3 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E6%8A%80%E6%9C%AF/20171210-python-recursive-handle-data.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://raw.githubusercontent.com/zhangjiabin1010/Knowledge/master/dog_head.jpg">
+      <meta itemprop="name" content="Mr.Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.Zhang's space">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          python  递归组织树形菜单栏数据
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-12-10 20:02:35" itemprop="dateCreated datePublished" datetime="2017-12-10T20:02:35+08:00">2017-12-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-07 17:11:06" itemprop="dateModified" datetime="2020-01-07T17:11:06+08:00">2020-01-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2017</h1>
-    </div>
+        <p>工作中遇到一个层级较深的菜单栏需求，采用递归方案处理。顺便提下递归的三个特性</p>
+<blockquote>
+<ol>
+<li>必须要有一个明确的结束条件, 否则就变成死循环导致栈溢出</li>
+<li>每次更深一层的递归，问题规模应有所减少，否则无限递归导致栈溢出。</li>
+<li>递归效率比较低，递归层次过多会导致栈溢出。</li>
+</ol>
+</blockquote>
+<a id="more"></a>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2017-12-10T20:02:35+08:00"
-              content="2017-12-10">
-          12-10
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/%E6%8A%80%E6%9C%AF/20171210-python-recursive-handle-data.html" itemprop="url">
-            <span itemprop="name">python  递归组织树形菜单栏数据</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2017-08-12T12:04:44+08:00"
-              content="2017-08-12">
-          08-12
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/%E6%80%9D%E7%BB%B4/20170812-People_Animal.html" itemprop="url">
-            <span itemprop="name">聊聊人对动物驯化史</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2017-08-10T19:46:25+08:00"
-              content="2017-08-10">
-          08-10
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/%E6%8A%80%E6%9C%AF/20170810-ThreadPool-method.html" itemprop="url">
-            <span itemprop="name">线程池的常见应用场景</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">sql_result &#x3D; [&#123;&#39;id&#39;: &#39;0&#39;, &#39;name&#39;: &#39;home&#39;, &#39;path&#39;: &#39;&#x2F;main&#x2F;home&#x2F;&#39;, &#39;text&#39;: &#39;首页&#39;, &#39;icon&#39;: &#39;icon-houtai1&#39;, &#39;parentid&#39;: &#39;&#39;&#125;,</span><br><span class="line"> &#123;&#39;id&#39;: &#39;02&#39;, &#39;name&#39;: &#39;#&#39;, &#39;path&#39;: &#39;#&#39;, &#39;text&#39;: &#39;主机资产&#39;, &#39;icon&#39;: &#39;icon-xingzhuang&#39;,</span><br><span class="line">  &#39;parentid&#39;: &#39;&#39;&#125;,</span><br><span class="line"> &#123;&#39;id&#39;: &#39;021&#39;, &#39;name&#39;: &#39;host_assets_management&#39;, &#39;path&#39;: &#39;&#x2F;main&#x2F;host_assets_management&#x2F;&#39;,</span><br><span class="line">  &#39;text&#39;: &#39;主机登记&#39;, &#39;icon&#39;: &#39;icon-caidan&#39;, &#39;parentid&#39;: &#39;02&#39;&#125;,</span><br><span class="line"> &#123;&#39;id&#39;: &#39;023&#39;, &#39;name&#39;: &#39;#&#39;, &#39;path&#39;: &#39;#&#39;, &#39;text&#39;: &#39;主机监控&#39;, &#39;icon&#39;: &#39;icon-caidan&#39;,</span><br><span class="line">  &#39;parentid&#39;: &#39;02&#39;&#125;,</span><br><span class="line"> &#123;&#39;id&#39;: &#39;0231&#39;, &#39;name&#39;: &#39;host_basic_config&#39;, &#39;path&#39;: &#39;&#x2F;main&#x2F;host_basic_config&#x2F;&#39;,</span><br><span class="line">  &#39;text&#39;: &#39;基础配置&#39;, &#39;icon&#39;: &#39;icon-shuju&#39;, &#39;parentid&#39;: &#39;0230&#39;&#125;,</span><br><span class="line"> &#123;&#39;id&#39;: &#39;0232&#39;, &#39;name&#39;: &#39;host_monitor_config&#39;, &#39;path&#39;: &#39;&#x2F;main&#x2F;host_monitor_config&#x2F;&#39;,</span><br><span class="line">  &#39;text&#39;: &#39;监控项配置&#39;, &#39;icon&#39;: &#39;icon-shuju&#39;, &#39;parentid&#39;: &#39;023&#39;&#125;,</span><br><span class="line"> &#123;&#39;id&#39;: &#39;0233&#39;, &#39;name&#39;: &#39;host_monitor_main_config&#39;,</span><br><span class="line">  &#39;path&#39;: &#39;&#x2F;main&#x2F;host_monitor_main_config&#x2F;&#39;, &#39;text&#39;: &#39;主机监控&#39;, &#39;icon&#39;: &#39;icon-shuju&#39;,</span><br><span class="line">  &#39;parentid&#39;: &#39;023&#39;&#125;]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def clear_parent_field(i):</span><br><span class="line">    return &#123;a: b for a, b in i.items() if a !&#x3D; &#39;parentid&#39;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def menu_router(sql_result, parentid&#x3D;&#39;&#39;):</span><br><span class="line">    menu_list &#x3D; []</span><br><span class="line">    for i in sql_result:</span><br><span class="line">        if i[&#39;parentid&#39;] &#x3D;&#x3D; parentid:</span><br><span class="line">            menu_list.append(clear_parent_field(&#123;**i, &#39;children&#39;: menu_router(sql_result, i[&#39;id&#39;])&#125;))</span><br><span class="line">    return menu_list</span><br><span class="line"></span><br><span class="line">result &#x3D; menu_router(sql_result)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
 
 
     </div>
+
+    
+    
+    
+	
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/python/" rel="tag"># python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E6%80%9D%E7%BB%B4/20170812-People_Animal.html" rel="prev" title="聊聊人对动物驯化史">
+      <i class="fa fa-chevron-left"></i> 聊聊人对动物驯化史
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
